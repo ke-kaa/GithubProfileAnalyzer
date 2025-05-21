@@ -1,0 +1,33 @@
+.web-info {
+    color: #fff;
+    padding: 1rem;
+    background-color: #14181F;
+    margin: 0;
+    height: 100%;
+    flex: 1 1 auto;
+    font-family: "Poppins", sans-serif;
+    font-style: italic;
+    overflow-y: hidden;
+}
+
+.services-list {
+    justify-self: center;
+}
+
+.center {
+    text-align: center;
+}
+
+.number-circle {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #fff;
+    align-items: center;
+    justify-content: center;
+    color: #14181F;
+    margin-right: 4px;
+    display: inline-flex;
+}
+
+
