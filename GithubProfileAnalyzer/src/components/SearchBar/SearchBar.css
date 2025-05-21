@@ -1,0 +1,43 @@
+
+.searchBar {
+    display: flex;
+    width: 88.88%;
+    height: 48px;
+    border: 1px solid #9198A1;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.searchIcon {
+    width: 24px;
+    height: 24px;
+}
+
+#usernameInput {
+    background-color: #010409;
+    border: none;
+    font-style: italic;
+    color: #fff;
+    height: 46px;
+    width: 90%;
+}
+
+#usernameInput:focus {
+    border: none;
+    box-shadow: none;
+    outline: none;
+}
+
+.clearButton {
+    width: 24px;
+    height: 24px;
+}
+
+/* .input-active {
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    outline: none;
+    padding: 8px 0;
+} */
+
