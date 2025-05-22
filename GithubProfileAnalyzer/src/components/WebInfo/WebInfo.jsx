@@ -12,9 +12,9 @@ export default function WebInfo() {
             <div className='services-list'>
                 <p className='center'>Enter a Github username to:</p>
                 <div className='services'>
-                    <p class="item-text"><span className='number-circle'>1</span>See a breakdown of programming languages used.</p>
-                    <p class="item-text"><span className='number-circle'>2</span>View stars per repository.</p>
-                    <p class="item-text"><span className='number-circle'>3</span> Get a summary of their public Github activity.</p>
+                    <p className="item-text"><span className='number-circle'>1</span>See a breakdown of programming languages used.</p>
+                    <p className="item-text"><span className='number-circle'>2</span>View stars per repository.</p>
+                    <p className="item-text"><span className='number-circle'>3</span> Get a summary of their public Github activity.</p>
                 </div>
             </div>
         </div>
