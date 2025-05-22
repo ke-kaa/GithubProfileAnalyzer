@@ -31,3 +31,9 @@
 }
 
 
+@media (min-width: 1200px) {
+    .services {
+        display: flex;
+        gap: 1rem;
+    }
+}
