@@ -5,48 +5,36 @@ import forkIcon from '../../assets/icons/forkIcon.png'
 import starIcon from '../../assets/icons/starIcon.png'
 
 export default function RepoList({name, stargazers_count, language, created_at, updated_at, forks_count}) {
-  return (
-    <div className='repo-card'>
-        <div className='name-starcount'>
-            {/* <p>{name}</p> */}
-            <p><span>Repo Name: </span>{name}</p>
+    return (
+        <div className='repo-card'>
+            <div className='name-starcount'>
+                {/* <p>{name}</p> */}
+                <p><span>Repo Name: </span>{name}</p>
 
-            <div className='star-count'>
-                <img src={starIcon} alt="" className='star-icon'/>
-                <span>500</span>   
+                <div className='star-count'>
+                    <img src={starIcon} alt="" className='star-icon'/>
+                    <span>500</span>   
+                </div>
             </div>
+            <div className='repo-extra-info'>
+                <div className='main-lang'>
+                    <p>{language}</p>
+                    <p>Language</p>
+                </div>
+                <div>
+                    <p>{created_at}</p>
+                    <p>Created</p>
+                </div>
+                <div>
+                    <p>{updated_at}</p>
+                    <p>Last Update</p>
+                </div>
+                <div>
+                    <p>{forks_count}</p>
+                    <img src={forkIcon} alt="" className='fork-icon'/>
+                </div>
+            </div>
+            {/* <LanguageChart /> */}
         </div>
-        <div className='repo-extra-info'>
-            <div className='main-lang'>
-                <p>{language}</p>
-                <p>Language</p>
-            </div>
-            <div>
-                <p>{created_at}</p>
-                <p>Created</p>
-            </div>
-            <div>
-                <p>{updated_at}</p>
-                <p>Last Update</p>
-            </div>
-            <div>
-                <p>{forks_count}</p>
-                <img src={forkIcon} alt="" className='fork-icon'/>
-            </div>
-        </div>
-        {/* <LanguageChart /> */}
-    </div>
-  )
+    )
 }
-
-/* 
-    repo name
-    start count
-
-    main language
-    created at
-    last update
-    for count
-    
-    language chart
-*/
