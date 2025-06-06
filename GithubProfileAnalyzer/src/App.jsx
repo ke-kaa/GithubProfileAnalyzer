@@ -4,7 +4,7 @@ import './App.css'
 import SearchBar from './components/SearchBar/SearchBar';
 import WebInfo from './components/WebInfo/WebInfo';
 import UserCard from './components/UserCard/UserCard';
-
+import RepoList from './components/RepoList/RepoList';
 function App() {
   const [count, setCount] = useState(0)
   return (
@@ -12,6 +12,7 @@ function App() {
       <SearchBar />
       {/* <WebInfo /> */}
       <UserCard />
+      <RepoList />
     </>
   )
 }
