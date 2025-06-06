@@ -2,6 +2,7 @@
 // https://api.github.com/users/{username}
 // https://api.github.com/users/{username}/repos
 // https://api.github.com/users/{username}/repos/languages 
+// https://api.github.com/repos/user/languages
 
 import axios from 'axios';
 
