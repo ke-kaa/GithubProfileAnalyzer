@@ -1,17 +1,19 @@
 import React from 'react'
 import './RepoList.css'
 // import LanguageChart from '../LanguageChart/LanguageChart'
+import forkIcon from '../../assets/icons/forkIcon.png'
+import starIcon from '../../assets/icons/starIcon.png'
 
 export default function RepoList({name, stargazers_count, language, created_at, updated_at, forks_count}) {
   return (
     <div className='repo-card'>
         <div className='name-starcount'>
             {/* <p>{name}</p> */}
-                <p><span>Repo Name: </span>{name}</p>
+            <p><span>Repo Name: </span>{name}</p>
 
             <div className='star-count'>
-                <p><span> Star count: </span>{stargazers_count}</p>
-
+                <img src={starIcon} alt="" className='star-icon'/>
+                <span>500</span>   
             </div>
         </div>
         <div className='repo-extra-info'>
@@ -29,10 +31,9 @@ export default function RepoList({name, stargazers_count, language, created_at, 
             </div>
             <div>
                 <p>{forks_count}</p>
-                <img src="" alt="" className='fork-icon'/>
+                <img src={forkIcon} alt="" className='fork-icon'/>
             </div>
         </div>
-
         {/* <LanguageChart /> */}
     </div>
   )
