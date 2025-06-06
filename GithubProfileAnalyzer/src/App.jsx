@@ -10,7 +10,8 @@ function App() {
   return (
     <>
       <SearchBar />
-      <WebInfo />
+      {/* <WebInfo /> */}
+      <UserCard />
     </>
   )
 }

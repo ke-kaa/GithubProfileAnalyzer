@@ -107,10 +107,15 @@ button:focus-visible {
 body{
   margin: 0;
   padding: 0;
+  background-color: #14181F;
 }
 
 #root {
   display: flex;
   flex-direction: column;
   height: 100vh;
+}
+
+.searchBarContainer {
+  background-color: #000;
 }

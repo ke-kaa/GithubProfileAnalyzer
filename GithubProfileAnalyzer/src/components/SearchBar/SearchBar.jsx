@@ -14,7 +14,7 @@ export default function SearchBar({onSearch, error}) {
     };
 
     return (
-    <div >
+    <div className="searchBarContainer">
         <form onSubmit={handleSubmit} className="searchBar" >
             <input 
             type="text"
