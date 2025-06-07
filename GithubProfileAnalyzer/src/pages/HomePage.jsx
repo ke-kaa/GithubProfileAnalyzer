@@ -6,7 +6,7 @@ import RepoList from '../components/RepoList/RepoList';
 import { fetchUserData, fetchUserRepos, fetchRepoLanguages } from '../services/githubService';
 
 
-export default HomePage = () => {
+export default function HomePage() {
     const [username, setUsername] = useState('')
     const [userData, setUserData] = useState(null);
     const [loading, setLoading] = useState(false);
