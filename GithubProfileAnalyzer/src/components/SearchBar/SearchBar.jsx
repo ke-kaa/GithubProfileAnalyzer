@@ -1,15 +1,16 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./SearchBar.css";
 import searchIcon from "../../assets/icons/searchIcon.png";
+import { fetchUserData } from "../../services/githubService";
 
-export default function SearchBar({onSearch, error}) {
+export default function SearchBar({onSearch}) {
     const [inputValue, setInputValue] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
         if (inputValue.trim() !== '') {
-            onSearch(inputValue.trim());
+            onSearch(inputValue.trim())
         }
     };
 
@@ -31,7 +32,7 @@ export default function SearchBar({onSearch, error}) {
                 onClick={handleSubmit}
             />
         </form>
-        {error && <p className="error">{error}</p>}
+        {/* {error && <p className="error">{error}</p>} */}
 
     </div>
     )
