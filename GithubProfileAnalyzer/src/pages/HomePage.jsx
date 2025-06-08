@@ -58,6 +58,7 @@ export default function HomePage() {
                                 created_at={repo.created_at}
                                 updated_at={repo.updated_at}
                                 forks_count={repo.forks_count}
+                                username={username}
                             />
                         ))
                     }
