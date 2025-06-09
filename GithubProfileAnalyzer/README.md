@@ -1,12 +1,105 @@
-# React + Vite
+# GitHub Profile Analyzer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React web application that allows you to search for any GitHub user and view detailed information about their profile, repositories, and language usage. The app provides a clean, responsive UI and visualizes repository language statistics with interactive charts.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **User Search:** Search for any GitHub user by username.
+- **Profile Overview:** View avatar, name, username, email, join date, followers, following, and public repo count.
+- **Repository List:** See a list of the user's public repositories with stars, forks, main language, and timestamps.
+- **Language Chart:** Visual breakdown of languages used in each repository.
+- **Responsive Design:** Works well on desktop and mobile devices.
+- **Error Handling:** User-friendly messages for not found users or API errors.
+- **Loading Indicators:** Visual feedback while data is being fetched.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v16 or above recommended)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/ke-kaa/GithubProfileAnalyzer.git
+   cd github-profile-analyzer
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. **Set up your GitHub API token:**
+   - Create a `.env` file in the root directory.
+   - Add your GitHub token (create one at https://github.com/settings/tokens):
+     ```
+     VITE_GITHUB_TOKEN=your_github_token_here
+     ```
+
+4. **Start the development server:**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+5. **Open your browser and visit:**
+   ```
+   http://localhost:5173
+   ```
+   (or the port shown in your terminal)
+
+---
+
+## Project Structure
+
+```
+src/
+  components/
+    LanguageChart/
+    Loading/
+    RepoList/
+    SearchBar/
+    UserCard/
+    WebInfo/
+  pages/
+    HomePage.jsx
+  services/
+    githubService.js
+  App.jsx
+  index.css
+```
+
+---
+
+## Technologies Used
+
+- **React** (Vite)
+- **Axios** (for API requests)
+- **Recharts** (for charts)
+- **CSS** (custom styling)
+
+---
+
+## Environment Variables
+
+- `VITE_GITHUB_TOKEN` — Your GitHub personal access token for authenticated API requests.
+
+---
+
+## Acknowledgements
+
+- [GitHub REST API](https://docs.github.com/en/rest)
+- [Recharts](https://recharts.org/)
+- [Poppins Font](https://fonts.google.com/specimen/Poppins)
+
+---
