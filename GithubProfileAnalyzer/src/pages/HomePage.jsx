@@ -1,18 +1,22 @@
 import React, { useState } from 'react';
+import './HomePage.css'
 import SearchBar from '../components/SearchBar/SearchBar';
 import WebInfo from '../components/WebInfo/WebInfo';
 import UserCard from '../components/UserCard/UserCard';
 import RepoList from '../components/RepoList/RepoList';
-import { fetchUserData, fetchUserRepos, fetchRepoLanguages } from '../services/githubService';
+import Loading from '../components/Loading/Loading';
+import { fetchUserData, fetchUserRepos } from '../services/githubService';
 
 
 export default function HomePage() {
     const [username, setUsername] = useState('')
     const [userData, setUserData] = useState(null);
     const [loading, setLoading] = useState(false);
-    const [reposData, setReposData] = useState([])
+    const [reposData, setReposData] = useState([]);
+    const [error, setError] = useState(null);
 
     const handleSearch = async (username) => {
+        setError(null);
         setUsername(username);
         setLoading(true);
         setUserData(null);
@@ -25,7 +29,7 @@ export default function HomePage() {
             setUserData(user);
             setReposData(repos);
         }catch (e){
-
+            setError('User not found or GitHub API error.')
         };
         setLoading(false)
     };
@@ -33,7 +37,19 @@ export default function HomePage() {
     return (
         <div>
             <SearchBar onSearch={handleSearch} />
-            {!username && <WebInfo />}
+            {loading && (
+                <div className='loading-center'>
+                    <Loading className="loading" />
+                </div>
+            )
+            }
+            {!username && !error &&<WebInfo />}
+            {error && (
+                <div className='error-center'>
+                    <p className='error-number'>404</p>
+                    {error}
+                </div>
+                )}
             {userData && (
                 <>
                     <UserCard
@@ -50,7 +66,7 @@ export default function HomePage() {
                     <div className="homepage-repo-list">
                     {reposData && reposData.length > 0 &&
                         reposData.map(repo => (
-                            <RepoList
+                            <RepoList  
                                 key={repo.id}
                                 name={repo.name}
                                 stargazers_count={repo.stargazers_count}
@@ -69,45 +85,3 @@ export default function HomePage() {
     )
 
 }
-// const HomePage = () => {
-//     const [error, setError] = useState(null);
-
-//     const handleSearch = async (username) => {
-//         setError(null);
-
-//         try {
-//         const reposWithLanguages = await Promise.all(
-//             repos.map(async (repo) => {
-//             const languages = await fetchRepoLanguages(repo.languages_url);
-//             return { ...repo, languages };
-//             })
-//         );
-
-//         setUserData(user);
-//         setReposData(reposWithLanguages);
-//         } catch (err) {
-//         setError('User not found or GitHub API error.');
-//         }
-
-//         setLoading(false);
-//     };
-
-//     return (
-//         <div className="container">
-//         <SearchBar onSearch={handleSearch} error={error} />
-        
-//         {/* {loading && <p>Loading...</p>} */}
-
-//         {/* {!userData && !loading && !error && <WebInfo />} */}
-
-//         {userData && <UserCard user={userData} />}
-
-//         {reposData.length > 0 &&
-//             reposData.map((repo) => (
-//             <RepoCard key={repo.id} repo={repo} languagesData={repo.languages} />
-//             ))}
-//         </div>
-//     );
-// };
-
-// export default HomePage;
