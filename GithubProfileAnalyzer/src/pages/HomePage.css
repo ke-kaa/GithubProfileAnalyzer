@@ -1,0 +1,22 @@
+.loading-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh; 
+    width: 100%;
+}
+
+.error-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh; 
+    width: 100%;
+    color: white;
+}
+
+.error-number {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+}
